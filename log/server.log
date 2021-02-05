@@ -1,0 +1,20 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> github.com/indrahadisetiadi/understanding-go-web-development/middleware.(*profileHandler).Login-fm (3 handlers)
+[GIN-debug] POST   /logout                   --> github.com/indrahadisetiadi/understanding-go-web-development/middleware.(*profileHandler).Logout-fm (3 handlers)
+[GIN-debug] GET    /captcha                  --> github.com/indrahadisetiadi/understanding-go-web-development/middleware.CaptchaHandler (3 handlers)
+[GIN-debug] POST   /captcha                  --> github.com/indrahadisetiadi/understanding-go-web-development/middleware.CaptchaSolver (3 handlers)
+[GIN-debug] POST   /forget/request           --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).RequestForgetPassword-fm (3 handlers)
+[GIN-debug] GET    /verify/activation/:code  --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).VerifyUser-fm (3 handlers)
+[GIN-debug] GET    /verify/forget/:code      --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).VerifyForgetPassword-fm (3 handlers)
+[GIN-debug] GET    /users/get/:id            --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).GetUser-fm (4 handlers)
+[GIN-debug] GET    /users/get-all            --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).GetAllUser-fm (4 handlers)
+[GIN-debug] PUT    /users/update             --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).UpdateUser-fm (4 handlers)
+[GIN-debug] DELETE /users/delete/:id         --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).DeleteUser-fm (4 handlers)
+[GIN-debug] POST   /users/question/create    --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).CreateQuestion-fm (4 handlers)
+[GIN-debug] POST   /users/question/update    --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).CreateQuestion-fm (4 handlers)
+[GIN-debug] POST   /users/create             --> github.com/indrahadisetiadi/understanding-go-web-development/controller.(*InDB).CreateUser-fm (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+::1 - [05 Feb 21 11:15 WIB] POST /users/create 200 1.3586404s 
