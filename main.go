@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/indrahadisetiadi/understanding-go-web-development/server"
-	"github.com/indrahadisetiadi/understanding-go-web-development/util"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/server"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
 )
 
 // var (
