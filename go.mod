@@ -1,4 +1,4 @@
-module gitlab.myih.telkom.co.id/bpd/nprm/service-user-management
+module gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development
 
 go 1.14
 

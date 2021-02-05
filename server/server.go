@@ -2,9 +2,9 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/indrahadisetiadi/understanding-go-web-development/controller"
-	"github.com/indrahadisetiadi/understanding-go-web-development/infra"
-	"github.com/indrahadisetiadi/understanding-go-web-development/util"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/infra"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
 )
 
 func Start() {

@@ -3,10 +3,10 @@ package controller
 import (
 	"net/http"
 
-	"github.com/indrahadisetiadi/understanding-go-web-development/util"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
 
 	"github.com/gin-gonic/gin"
-	"github.com/indrahadisetiadi/understanding-go-web-development/model"
+	model "gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/model"
 )
 
 func (idb *InDB) CreateQuestion(ctx *gin.Context) {

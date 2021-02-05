@@ -1,8 +1,8 @@
 package infra
 
 import (
-	"github.com/indrahadisetiadi/understanding-go-web-development/model"
 	"github.com/jinzhu/gorm"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/model"
 )
 
 func LoadSQLiteDB() *gorm.DB {

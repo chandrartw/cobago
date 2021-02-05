@@ -4,11 +4,11 @@ import (
 	"os"
 
 	"github.com/go-redis/redis"
-	"github.com/indrahadisetiadi/understanding-go-web-development/auth"
-	"github.com/indrahadisetiadi/understanding-go-web-development/middleware"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/auth"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/middleware"
 
 	"github.com/gin-gonic/gin"
-	"github.com/indrahadisetiadi/understanding-go-web-development/controller"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller"
 	// swagger embed files
 	// gin-swagger middleware
 )

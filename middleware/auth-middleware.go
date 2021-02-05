@@ -11,10 +11,10 @@ import (
 
 	"github.com/xkeyideal/captcha/pool"
 
-	"github.com/indrahadisetiadi/understanding-go-web-development/auth"
-	"github.com/indrahadisetiadi/understanding-go-web-development/controller"
-	"github.com/indrahadisetiadi/understanding-go-web-development/model"
-	"github.com/indrahadisetiadi/understanding-go-web-development/util"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/auth"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/model"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
 )
 
 type profileHandler struct {

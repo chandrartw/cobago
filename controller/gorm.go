@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/indrahadisetiadi/understanding-go-web-development/infra"
 	"github.com/jinzhu/gorm"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/infra"
 )
 
 type InDB struct {

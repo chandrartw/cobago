@@ -1,9 +1,9 @@
 package infra
 
 import (
-	"github.com/indrahadisetiadi/understanding-go-web-development/model"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/model"
 )
 
 func LoadPostgreSQLDB() *gorm.DB {
