@@ -17,3 +17,7 @@
 [GIN-debug] POST   /users/question/update    --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).CreateQuestion-fm (4 handlers)
 [GIN-debug] POST   /users/create             --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).CreateUser-fm (3 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
+::1 - [08 Feb 21 14:11 WIB] POST /users/create 422 486.8µs 
+::1 - [08 Feb 21 14:11 WIB] POST /users/create 422 106.8µs 
+::1 - [08 Feb 21 14:11 WIB] POST /users/create 422 52.2µs 
+::1 - [08 Feb 21 14:12 WIB] POST /users/create 422 83µs 

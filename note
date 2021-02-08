@@ -1,0 +1,12 @@
+yang digunakan :
+1.  main.go
+ 2. auth (auth.go, jwt.go)
+ 3. Model (customer)
+ 4. controller(gorm dan user-controller)
+5. infra (pstgree)
+6. log
+7. middleware token ( auth-middleware)
+8. server 
+
+mas indra :
+router, masuk ke controller (membutuhkan model)
