@@ -7,4 +7,5 @@
 [GIN-debug] GET    /user/:id                 --> github.com/putriapriandi/cobago/controller.(*InDB).GetUser-fm (3 handlers)
 [GIN-debug] PUT    /user/:id                 --> github.com/putriapriandi/cobago/controller.(*InDB).UpdateUser-fm (3 handlers)
 [GIN-debug] DELETE /user/:id                 --> github.com/putriapriandi/cobago/controller.(*InDB).DeleteUser-fm (3 handlers)
-[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] Listening and serving HTTP on :5050
+::1 - [09 Feb 21 17:09 +07] PUT /user/2 200 151.9982ms 

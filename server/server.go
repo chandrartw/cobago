@@ -20,6 +20,6 @@ func Start() {
 	 db := infra.LoadSQLiteDB()
 	inDB := &controller.InDB{DB: db}
 	Routes(server, inDB)
-	server.Run(":8080")
+	server.Run(":5050")
 	defer db.Close()
 }

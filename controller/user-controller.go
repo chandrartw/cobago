@@ -3,7 +3,7 @@ package controller
 import (
 	// "crypto/rand"
 	// "encoding/hex"
-	 "net/http"
+	"net/http"
 	// "time"
 
 	//"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
@@ -12,8 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 	//"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/model"
 	model "github.com/putriapriandi/cobago/model"
-
-//	"golang.org/x/crypto/bcrypt"
+	//	"golang.org/x/crypto/bcrypt"
 )
 
 func (idb *InDB) CreateUser(ctx *gin.Context) {
@@ -27,7 +26,12 @@ func (idb *InDB) CreateUser(ctx *gin.Context) {
 		ctx.Abort()
 		return
 	}
-
+	err = idb.DB.Create(&customer).Error
+	if err != nil {
+		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Create User")
+		ctx.Abort()
+	}
+	util.ResponseSuccess(ctx, http.StatusOK, customer)
 	// password, err := bcrypt.GenerateFromPassword([]byte(customer.Credential.Password), 14)
 	// if err != nil {
 	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Bad Password")
@@ -61,7 +65,7 @@ func (idb *InDB) CreateUser(ctx *gin.Context) {
 
 func (idb *InDB) GetUser(ctx *gin.Context) {
 	var (
-		customer       model.Customer
+		customer model.Customer
 		// credential model.Credential
 		// status     model.Status
 	)
@@ -73,7 +77,6 @@ func (idb *InDB) GetUser(ctx *gin.Context) {
 		ctx.Abort()
 		return
 	}
-
 	// err = idb.DB.Where("ca_no = ?", id).First(&credential).Error
 	// if err != nil {
 	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
@@ -136,7 +139,7 @@ func (idb *InDB) DeleteUser(ctx *gin.Context) {
 }
 
 func (idb *InDB) UpdateUser(ctx *gin.Context) {
-	id := ctx.Query("id")
+	id := ctx.Param("id")
 
 	var (
 		customer    model.Customer
@@ -157,7 +160,7 @@ func (idb *InDB) UpdateUser(ctx *gin.Context) {
 		return
 	}
 
-	err = idb.DB.Model(&customer).Updates(newCustomer).Error
+	err = idb.DB.Model(&customer).Where("id = ?", id).Updates(newCustomer).Error
 	if err != nil {
 		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "Update Failed")
 		ctx.Abort()
