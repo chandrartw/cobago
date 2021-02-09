@@ -2,22 +2,9 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] POST   /login                    --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/middleware.(*profileHandler).Login-fm (3 handlers)
-[GIN-debug] POST   /logout                   --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/middleware.(*profileHandler).Logout-fm (3 handlers)
-[GIN-debug] GET    /captcha                  --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/middleware.CaptchaHandler (3 handlers)
-[GIN-debug] POST   /captcha                  --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/middleware.CaptchaSolver (3 handlers)
-[GIN-debug] POST   /forget/request           --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).RequestForgetPassword-fm (3 handlers)
-[GIN-debug] GET    /verify/activation/:code  --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).VerifyUser-fm (3 handlers)
-[GIN-debug] GET    /verify/forget/:code      --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).VerifyForgetPassword-fm (3 handlers)
-[GIN-debug] GET    /users/get/:id            --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).GetUser-fm (4 handlers)
-[GIN-debug] GET    /users/get-all            --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).GetAllUser-fm (4 handlers)
-[GIN-debug] PUT    /users/update             --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).UpdateUser-fm (4 handlers)
-[GIN-debug] DELETE /users/delete/:id         --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).DeleteUser-fm (4 handlers)
-[GIN-debug] POST   /users/question/create    --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).CreateQuestion-fm (4 handlers)
-[GIN-debug] POST   /users/question/update    --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).CreateQuestion-fm (4 handlers)
-[GIN-debug] POST   /users/create             --> gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/controller.(*InDB).CreateUser-fm (3 handlers)
+[GIN-debug] POST   /user                     --> github.com/putriapriandi/cobago/controller.(*InDB).CreateUser-fm (3 handlers)
+[GIN-debug] GET    /user                     --> github.com/putriapriandi/cobago/controller.(*InDB).GetAllUser-fm (3 handlers)
+[GIN-debug] GET    /user/:id                 --> github.com/putriapriandi/cobago/controller.(*InDB).GetUser-fm (3 handlers)
+[GIN-debug] PUT    /user/:id                 --> github.com/putriapriandi/cobago/controller.(*InDB).UpdateUser-fm (3 handlers)
+[GIN-debug] DELETE /user/:id                 --> github.com/putriapriandi/cobago/controller.(*InDB).DeleteUser-fm (3 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [08 Feb 21 14:11 WIB] POST /users/create 422 486.8µs 
-::1 - [08 Feb 21 14:11 WIB] POST /users/create 422 106.8µs 
-::1 - [08 Feb 21 14:11 WIB] POST /users/create 422 52.2µs 
-::1 - [08 Feb 21 14:12 WIB] POST /users/create 422 83µs 

@@ -2,8 +2,12 @@
 package main
 
 import (
-	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/server"
-	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
+	//"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/server"
+	//"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
+	util "github.com/putriapriandi/cobago/util"
+	server "github.com/putriapriandi/cobago/server"
+
+
 )
 
 // var (

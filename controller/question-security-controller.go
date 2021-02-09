@@ -3,10 +3,14 @@ package controller
 import (
 	"net/http"
 
-	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
+	//"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/util"
+	util "github.com/putriapriandi/cobago/util"
+
 
 	"github.com/gin-gonic/gin"
-	model "gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/model"
+	//model "gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/model"
+	model "github.com/putriapriandi/cobago/model"
+
 )
 
 func (idb *InDB) CreateQuestion(ctx *gin.Context) {

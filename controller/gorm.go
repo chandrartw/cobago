@@ -2,7 +2,9 @@ package controller
 
 import (
 	"github.com/jinzhu/gorm"
-	"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/infra"
+	//"gitlab.myih.telkom.co.id/bpd/nprm/nprm-backend/-/tree/development/infra"
+	infra "github.com/putriapriandi/cobago/infra"
+
 )
 
 type InDB struct {
@@ -11,8 +13,8 @@ type InDB struct {
 
 func ConnectDB() *InDB {
 	// infra.LoadPostgreSQLDB()
-	db := infra.LoadPostgreSQLDB()
-	// db := infra.LoadSQLiteDB()
+	//db := infra.LoadPostgreSQLDB()
+	db := infra.LoadSQLiteDB()
 	inDB := &InDB{DB: db}
 	return inDB
 }
