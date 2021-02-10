@@ -12,7 +12,7 @@ type InDB struct {
 
 func ConnectDB() *InDB {
 	//db := infra.LoadPostgreSQLDB()
-	db := infra.LoadPostgreSQLDB()
+	db := infra.LoadOracleDB()
 	//db := infra.LoadSQLiteDB()
 	inDB := &InDB{DB: db}
 	return inDB

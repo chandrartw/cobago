@@ -15,86 +15,86 @@ import (
 	//	"golang.org/x/crypto/bcrypt"
 )
 
-func (idb *InDB) CreateUser(ctx *gin.Context) {
-	var (
-		customer model.Customer
-	)
+// func (idb *InDB) CreateUser(ctx *gin.Context) {
+// 	var (
+// 		customer model.Customer
+// 	)
 
-	err := ctx.ShouldBindJSON(&customer)
-	if err != nil {
-		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "Please Check Your Data")
-		ctx.Abort()
-		return
-	}
-	err = idb.DB.Create(&customer).Error
-	if err != nil {
-		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Create User")
-		ctx.Abort()
-	}
-	util.ResponseSuccess(ctx, http.StatusOK, customer)
-	// password, err := bcrypt.GenerateFromPassword([]byte(customer.Credential.Password), 14)
-	// if err != nil {
-	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Bad Password")
-	// 	ctx.Abort()
-	// 	return
-	// }
-	// customer.Credential.Password = string(password)
-	// // user.Status.Code = uuid.NewV4().String()
-	// b := make([]byte, 32) //equals 8 charachters
-	// rand.Read(b)
-	// customer.Status.Code = hex.EncodeToString(b)
+// 	err := ctx.ShouldBindJSON(&customer)
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "Please Check Your Data")
+// 		ctx.Abort()
+// 		return
+// 	}
+// 	err = idb.DB.Create(&customer).Error
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Create User")
+// 		ctx.Abort()
+// 	}
+// 	util.ResponseSuccess(ctx, http.StatusOK, customer)
+// 	// password, err := bcrypt.GenerateFromPassword([]byte(customer.Credential.Password), 14)
+// 	// if err != nil {
+// 	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Bad Password")
+// 	// 	ctx.Abort()
+// 	// 	return
+// 	// }
+// 	// customer.Credential.Password = string(password)
+// 	// // user.Status.Code = uuid.NewV4().String()
+// 	// b := make([]byte, 32) //equals 8 charachters
+// 	// rand.Read(b)
+// 	// customer.Status.Code = hex.EncodeToString(b)
 
-	// // dexp, _ := strconv.Atoi(os.Getenv("VERIFY_DAY_EXPIRED"))
-	// customer.Status.VerifyExp = time.Now().Add(time.Hour * 24)
-	// err = idb.DB.Create(&customer).Error
-	// if err != nil {
-	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Create User")
-	// 	ctx.Abort()
-	// 	return
-	// }
+// 	// // dexp, _ := strconv.Atoi(os.Getenv("VERIFY_DAY_EXPIRED"))
+// 	// customer.Status.VerifyExp = time.Now().Add(time.Hour * 24)
+// 	// err = idb.DB.Create(&customer).Error
+// 	// if err != nil {
+// 	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Create User")
+// 	// 	ctx.Abort()
+// 	// 	return
+// 	// }
 
-	//err = util.SendMailVerify(user.Email, user.FirstName, user.Status.Code, user.Status.VerifyExp.Format("2006-01-02 15:04:05")) -> verifikasi email
+// 	//err = util.SendMailVerify(user.Email, user.FirstName, user.Status.Code, user.Status.VerifyExp.Format("2006-01-02 15:04:05")) -> verifikasi email
 
-	// if err != nil {
-	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Send Email")
-	// 	ctx.Abort()
-	// 	return
-	// }
-	// util.ResponseSuccess(ctx, http.StatusOK, user)
-}
+// 	// if err != nil {
+// 	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Send Email")
+// 	// 	ctx.Abort()
+// 	// 	return
+// 	// }
+// 	// util.ResponseSuccess(ctx, http.StatusOK, user)
+// }
 
-func (idb *InDB) GetUser(ctx *gin.Context) {
-	var (
-		customer model.Customer
-		// credential model.Credential
-		// status     model.Status
-	)
-	id := ctx.Param("id")
-	err := idb.DB.Where("id = ?", id).First(&customer).Error
+// func (idb *InDB) GetUser(ctx *gin.Context) {
+// 	var (
+// 		customer model.Customer
+// 		// credential model.Credential
+// 		// status     model.Status
+// 	)
+// 	id := ctx.Param("id")
+// 	err := idb.DB.Where("id = ?", id).First(&customer).Error
 
-	if err != nil {
-		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
-		ctx.Abort()
-		return
-	}
-	// err = idb.DB.Where("ca_no = ?", id).First(&credential).Error
-	// if err != nil {
-	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
-	// 	ctx.Abort()
-	// 	return
-	// }
-	// user.Credential = credential
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
+// 		ctx.Abort()
+// 		return
+// 	}
+// 	// err = idb.DB.Where("ca_no = ?", id).First(&credential).Error
+// 	// if err != nil {
+// 	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
+// 	// 	ctx.Abort()
+// 	// 	return
+// 	// }
+// 	// user.Credential = credential
 
-	// err = idb.DB.Where("user_id = ?", id).First(&status).Error
-	// if err != nil {
-	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
-	// 	ctx.Abort()
-	// 	return
-	// }
-	// user.Status = status
+// 	// err = idb.DB.Where("user_id = ?", id).First(&status).Error
+// 	// if err != nil {
+// 	// 	util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
+// 	// 	ctx.Abort()
+// 	// 	return
+// 	// }
+// 	// user.Status = status
 
-	// util.ResponseSuccess(ctx, http.StatusOK, user)
-}
+// 	// util.ResponseSuccess(ctx, http.StatusOK, user)
+// }
 
 func (idb *InDB) GetAllUser(ctx *gin.Context) {
 
@@ -111,65 +111,65 @@ func (idb *InDB) GetAllUser(ctx *gin.Context) {
 
 }
 
-func (idb *InDB) DeleteUser(ctx *gin.Context) {
-	var (
-		customer model.Customer
-	)
-	id := ctx.Param("id")
+// func (idb *InDB) DeleteUser(ctx *gin.Context) {
+// 	var (
+// 		customer model.Customer
+// 	)
+// 	id := ctx.Param("id")
 
-	err := idb.DB.Where("id = ?", id).First(&customer).Error
-	if err != nil {
-		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
-		ctx.Abort()
-		return
-	}
-	err = idb.DB.Unscoped().Delete(&customer).Error
-	if err != nil {
-		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
-		ctx.Abort()
-		return
-	}
-	if err != nil {
-		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Delete User")
-		ctx.Abort()
-		return
-	}
+// 	err := idb.DB.Where("id = ?", id).First(&customer).Error
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
+// 		ctx.Abort()
+// 		return
+// 	}
+// 	err = idb.DB.Unscoped().Delete(&customer).Error
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Find Id User")
+// 		ctx.Abort()
+// 		return
+// 	}
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusBadRequest, err.Error(), "Error Delete User")
+// 		ctx.Abort()
+// 		return
+// 	}
 
-	util.ResponseSuccessCustomMessage(ctx, http.StatusOK, "Success Deleted")
-}
+// 	util.ResponseSuccessCustomMessage(ctx, http.StatusOK, "Success Deleted")
+// }
 
-func (idb *InDB) UpdateUser(ctx *gin.Context) {
-	id := ctx.Param("id")
+// func (idb *InDB) UpdateUser(ctx *gin.Context) {
+// 	id := ctx.Param("id")
 
-	var (
-		customer    model.Customer
-		newCustomer model.Customer
-	)
+// 	var (
+// 		customer    model.Customer
+// 		newCustomer model.Customer
+// 	)
 
-	err := idb.DB.First(&customer, id).Error
-	if err != nil {
-		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "ID Not Found")
-		ctx.Abort()
-		return
-	}
+// 	err := idb.DB.First(&customer, id).Error
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "ID Not Found")
+// 		ctx.Abort()
+// 		return
+// 	}
 
-	err = ctx.ShouldBindJSON(&newCustomer)
-	if err != nil {
-		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "Please Check Your Data")
-		ctx.Abort()
-		return
-	}
+// 	err = ctx.ShouldBindJSON(&newCustomer)
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "Please Check Your Data")
+// 		ctx.Abort()
+// 		return
+// 	}
 
-	err = idb.DB.Model(&customer).Where("id = ?", id).Updates(newCustomer).Error
-	if err != nil {
-		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "Update Failed")
-		ctx.Abort()
-		return
-	}
+// 	err = idb.DB.Model(&customer).Where("id = ?", id).Updates(newCustomer).Error
+// 	if err != nil {
+// 		util.ResponseError(ctx, http.StatusUnprocessableEntity, err.Error(), "Update Failed")
+// 		ctx.Abort()
+// 		return
+// 	}
 
-	util.ResponseSuccess(ctx, http.StatusOK, customer)
+// 	util.ResponseSuccess(ctx, http.StatusOK, customer)
 
-}
+// }
 
 // func (idb *InDB) VerifyUser(ctx *gin.Context) {
 // 	code := ctx.Param("code")

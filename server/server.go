@@ -15,10 +15,10 @@ import (
 func Start() {
 	server := gin.New()
 	server.Use(gin.Recovery(), util.Logger())
-	db := infra.LoadPostgreSQLDB()
+	db := infra.LoadOracleDB()
 	//db := infra.LoadSQLiteDB()
 	inDB := &controller.InDB{DB: db}
 	Routes(server, inDB)
-	server.Run(":5435")
+	server.Run(":1521")
 	defer db.Close()
 }
